@@ -1,0 +1,21 @@
+{
+  "name": "sbg-technical-tester-assessment",
+  "version": "1.0.0",
+  "description": "Trading Tribe's Technical Tester Assessment",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha  tests/*spec.js --timeout 100000"
+  },
+  "author": "Ben Little, Pavel Nicovala",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "mocha": "^2.4.5"
+  }
+}

@@ -17,12 +17,19 @@ describe('/remove fixture', () => {
                 done()
             })
     })
-
+    it('should GET the new fixture', (done) => {
+        newfixture.get('/fixture/4').end((err, res) => {
+            res.should.have.status(200);
+            res.should.be.a('object');
+            done();
+        });
+    });
     it('should DELETE a fixture', (done) => {
 
         newfixture.delete('/fixture/4')
             .send(newfixture)
-            .end(() => {
+            .end((err, res) => {
+                res.text.should.equal('Fixture has been deleted')
                 newfixture.get('/fixture/4').end((err, res) => {
                     res.should.have.status(404);
                     res.should.be.a('object');
